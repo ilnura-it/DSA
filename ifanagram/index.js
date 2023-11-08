@@ -11,5 +11,5 @@ function isAnagram(s, t) {
 
 module.exports = isAnagram
 
-console.log(isAnagram('cat', 'rat'))
-console.log(isAnagram('anagram', 'nagaram'))
+isAnagram('cat', 'rat')
+isAnagram('anagram', 'nagaram')
