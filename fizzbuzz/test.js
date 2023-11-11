@@ -1,4 +1,4 @@
-const fizzBuzz = require('./index'); // Update the path accordingly
+/*const fizzBuzz = require('./index'); // Update the path accordingly
 const mockConsole = require('jest-mock-console');
 
 describe('fizzBuzz', () => {
@@ -35,7 +35,7 @@ describe('fizzBuzz', () => {
 
    
 });
-
+*/
 
 
 

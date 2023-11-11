@@ -15,13 +15,14 @@ function longestCommonPrefix(strs) {
      // if (ans.indexOf(currentChar) === -1) {
      //          ans.push(currentChar);
      //       }
-     console.log(ans)
      ans += currentChar;
    }
    return ans
 };
 
-console.log(longestCommonPrefix(["flow", "flight", "flower"]))
-// longestCommonPrefix(["dog","racecar","car"])
-console.log(longestCommonPrefix(["flower","flower","flower","flower"]))
-console.log(longestCommonPrefix(["aa", "aa"]));
+module.exports = longestCommonPrefix;
+
+longestCommonPrefix(["flow", "flight", "flower"])
+longestCommonPrefix(["dog","racecar","car"])
+longestCommonPrefix(["flower","flower","flower","flower"])
+longestCommonPrefix(["aa", "aa"])
