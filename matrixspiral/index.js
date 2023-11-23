@@ -1,31 +1,46 @@
-function matrixspiral(n){
+function matrixspiral(n) {
    let result = [];
+
+   for (let i = 0; i < n; i++) {
+      result.push([]);
+   }
+
    let counter = 1;
-   let col_start = 0;
-   let row_start = 0;
-   let col_end = n - 1;
-   let row_end = n - 1;
-   while( (col_start <= col_end) && (row_start <= row_end) ){
-      if (!result[row_start]) {
-         result[row_start] = [];
+   let startColumn = 0;
+   let endColumn = n - 1;
+   let startRow = 0;
+   let endRow = n - 1;
+
+   while (startRow <= endRow && startColumn <= endColumn) {
+
+      //Top Row
+      for (let i = startColumn; i <= endColumn; i++) {
+         result[startRow][i] = counter;
+         counter++;
       }
-      for (let i = 0; i <= col_end; i++){
-         result[row_start][i] = counter;
-         counter++;   
+      startRow++;
+
+      //Right Column
+      for (let i = startRow; i <= endRow; i++) {
+         result[i][endColumn] = counter;
+         counter++;
       }
-      row_start++;
-      
-     for (let j = 0; j <= row_end; j++){
-        if (!result[i]) {
-           result[i] = [];
-        }
-        result[i][col_end] = counter;
-        counter++;
-     }
-     row_end--;
+      endColumn--;
+      //Bottom Row
+      for (let i = endColumn; i >= startColumn; i--) {
+         result[endRow][i] = counter;
+         counter++;
+      }
+      endRow--;
+      //Start column
+      for (let i = endRow; i >= startRow; i--) {
+         result[i][startColumn] = counter;
+         counter++;
+      }
+      startColumn++;
    }
-   console.log(result)
-   }
+   return result;
+}
 
 //function matrixspiral(n) {
 //   let result = [];
@@ -42,8 +57,8 @@ function matrixspiral(n){
 //   console.log(result);
 //
 //}
-   
-   module.exports = matrixspiral;
-   
-   matrixspiral(3)
+
+module.exports = matrixspiral;
+
+matrixspiral(5)
 
